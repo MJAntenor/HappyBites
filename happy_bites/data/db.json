@@ -1,0 +1,54 @@
+{
+  "recipes": [
+    {
+      "image": "Cheesecake.jpg",
+      "title": "Lemon Cheesecake",
+      "time": "2 hours",
+      "likes": 35,
+      "comments": 6,
+      "id": 1,
+      "favorite": true,
+      "tags": [
+        "mexican",
+        "gluten-free"
+      ]
+    },
+    {
+        "image": "Puttanesca.jpg",
+      "title": "Cheap Puttanesca",
+      "time": "2 hours",
+      "likes": 5,
+      "comments": 1,
+      "id": 2,
+      "favorite": false,
+      "tags": [
+        "italian"
+      ]
+    },
+    {
+        "image": "Burrito.jpg",
+      "title": "Burritos",
+      "time": "45 min",
+      "likes": 100,
+      "comments": 50,
+      "id": 3,
+      "favorite": true,
+      "tags": [
+        "mexican"
+      ]
+    },
+    {
+        "image": "Sourdough.jpg",
+      "title": "Sourdough Bread",
+      "time": "2 hours",
+      "likes": 20,
+      "comments": 6,
+      "id": 4,
+      "favorite": true,
+      "tags": [
+        "mexican",
+        "vegan"
+      ]
+    }
+  ]
+}

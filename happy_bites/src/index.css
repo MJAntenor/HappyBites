@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@300&display=swap');
 
+
+/* Overall Rules */
 :root {
   --logo-color: #606C38;
+  --logo-color-dark: #283618;
   --pop-color-dark: #bc6c25;
   --pop-color-light: #dda15e;
   --background-color: #fefae0;
@@ -17,35 +20,120 @@
 h1, h2, h3 {
   margin: 0;
   font-family: "Abril Fatface";
-  color: #333;
+  color: var(--logo-color-dark);
 }
 .navbar {
   padding: 20px;
-  display: flex;
   align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
+  width: 150px;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--logo-color);
 }
 .navbar h1 {
-  color: var(--logo-color);
+  color: var(--background-color);
 }
 .navbar .links {
-  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }
 .navbar a {
-  margin-left: 16px;
   text-decoration: none;
-  padding: 6px;
+  width: 80%;
+  padding: 10px;
+  color: var(--background-color);
 }
 .navbar a:hover {
   background-color: var(--pop-color-light);
   color: var(--background-color);
   border-radius: 8px;
 }
-.content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
+
+/* Recipe Blocks */
+.recipe-preview {
+  padding: 10px 16px;
+  margin: 20px;
+  border-bottom: 1px solid var(--background-color);
+  width: 150px;
+  height: 200px;
+  border: 2px var(--logo-color) solid;
+  border-radius: 20px;
+  text-decoration: none;
 }
 
+.recipe-preview a {
+  text-decoration: none;
+}
+
+.recipe-preview:hover {
+  box-shadow: 1px 3px 5px var(--logo-color-dark);
+}
+
+.recipe-preview h2 {
+  font-size: 20px;
+  color: var(--logo-color-dark);
+  margin-bottom: 8px;
+}
+
+.home {
+  width: calc(100% - 200px);
+  padding-left: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.RecipeContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.recipe-details {
+  width: calc(100% - 200px);
+  padding-left: 200px;
+  display: flex;
+}
+
+/*Create Recipe*/
+.create {
+  width: calc(100% - 200px);
+  padding: 10vw;
+  padding-left: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.create label {
+  text-align: left;
+  display: block;
+  font-size: 25px;
+}
+
+.create input {
+  width: 50vw;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid var(--background-color);
+  box-sizing: border-box;
+  display: block;
+  font-size: 20px;
+}
+
+.create button {
+  background: var(--pop-color-light);
+  color: var(--background-color);
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.create form {
+  padding: 20px;
+}

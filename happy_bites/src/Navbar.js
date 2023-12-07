@@ -1,13 +1,16 @@
+import {Link} from 'react-router-dom';
+
 const Navbar = () => {
     return ( 
         <nav className="navbar">
+            <img src="HappyBitesLogo.png" alt="HappyBites Logo" height='100px' width='100px'/>
             <h1>HappyBites</h1>
             <div className="links">
-                <a href="/">Home</a>
-                <a href="/profile">Profile</a>
-                <a href="/cookbook">Cookbook</a>
-                <a href="/create">New Recipe</a>
-                <a href="/login">Login</a>
+                <Link to="/">Home</Link>
+                <Link to="/profile">Profile</Link>
+                <Link to="/cookbook">Cookbook</Link>
+                <Link to="/create">New Recipe</Link>
+                <Link to="/login">Login</Link>
             </div>
         </nav>
      );
