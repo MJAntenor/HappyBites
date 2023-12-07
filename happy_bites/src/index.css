@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Roboto:wght@300&display=swap');
 
+:root {
+  --logo-color: #606C38;
+  --pop-color-dark: #bc6c25;
+  --pop-color-light: #dda15e;
+  --background-color: #fefae0;
+  background-color: var(--background-color);
+}
+
 * {
   margin: 0;
   font-family: "Roboto";
@@ -20,7 +28,7 @@ h1, h2, h3 {
   border-bottom: 1px solid #f2f2f2;
 }
 .navbar h1 {
-  color: #f1356d;
+  color: var(--logo-color);
 }
 .navbar .links {
   margin-left: auto;
@@ -31,7 +39,9 @@ h1, h2, h3 {
   padding: 6px;
 }
 .navbar a:hover {
-  color: #f1356d;
+  background-color: var(--pop-color-light);
+  color: var(--background-color);
+  border-radius: 8px;
 }
 .content {
   max-width: 600px;
