@@ -10,11 +10,12 @@ const [comments, setComments] = useState(0);
 const [favorite, setFavorite] = useState(true);
 const history = useHistory();
 const [isPending, setIsPending] = useState(false);
-const tags = new Set()
+const tagsList = new Set()
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    tags = Array.from(tags);
+    console.log(tagsList);
+    var tags = Array.from(tagsList);
     const recipe = {title, time, likes, comments, favorite, tags};
 
     console.log(recipe);
@@ -33,11 +34,16 @@ const handleSubmit = (e) => {
 
 const addTagsToRecipe = (tagsToAdd) => {
     tagsToAdd.map(tag => {
-        tags.add(tag)
+        tagsList.add(tag)
     })
 }
 
+function reset() {
+    document.querySelectorAll('input[type=checkbox]').forEach(checkbox => checkbox.checked = false);
+}
+
     return (
+        
         <div className="create">
             <h1>Add a New Recipe</h1>
             <form onSubmit={handleSubmit}>
@@ -64,11 +70,20 @@ const addTagsToRecipe = (tagsToAdd) => {
                     onChange={((e) => setTime(e.target.value))}
                 ></input>
                 <label>Tags:</label>
+                <div class="filters">
+                    <div>
+                    <input id = "gluten-free" type='checkbox' class="hidden" name="gluten-free"/>
+                    <label for="gluten-free" onMouseDown={() => addTagsToRecipe(["gluten-free"])}>gluten-free</label>
+                    <input id ="mexican" type='checkbox' class="hidden" name="mexican" />
+                    <label for="mexican">mexican</label>
+                    </div>
+                <button onClick={reset}>Reset</button>
+                </div>
                 <div>
                     <ul>
                         <li><input type='checkbox' name="gluten-free"  />
-                        <label for="gluten-free" onChange={() => addTagsToRecipe(["gluten-free"])}>gluten-free</label>
-                        <li></li><input type='checkbox' name="mexican" onChange={() => addTagsToRecipe(["mexican"])} />
+                        <label for="gluten-free" >gluten-free</label></li>
+                        <li><input type='checkbox' name="mexican" onChange={() => addTagsToRecipe(["mexican"])} />
                         <label for="mexican">mexican</label></li>
                     </ul>
                 </div>

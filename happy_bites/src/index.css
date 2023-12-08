@@ -61,6 +61,7 @@ h1, h2, h3 {
   border: 2px var(--logo-color) solid;
   border-radius: 20px;
   text-decoration: none;
+  justify-content: left;
 }
 
 .recipe-preview a {
@@ -79,18 +80,69 @@ h1, h2, h3 {
 
 .home {
   width: calc(100% - 200px);
-  padding-left: 200px;
+  padding-left: 250px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: left;
+  flex-wrap: wrap; 
+  padding-top: 50px;
+}
+
+.home button {
+  border-radius: 25px;
+  background-color: var(--pop-color-dark);
+  color: var(--background-color);
+  border: var(--pop-color-dark) 2px solid;
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.home button:hover {
+  background-color: var(--pop-color-light);
+}
+
+.filters {
+  background-color: var(--logo-color);
+  border-radius: 25px;
+  border: var(--logo-color-dark) 2px solid;
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.filters span {
+  padding-left: 10px;
+  color: var(--background-color);
+  font-size: 20px;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+input[type=checkbox]+label {
+  border-radius: 25px;
+  background-color: var(--background-color);
+  color: var(--logo-color);
+  border: var(--logo-color) 2px solid;
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+}
+
+input[type=checkbox]:checked+label {
+  background-color: var(--logo-color);
+  color: var(--background-color);
+  border: var(--background-color) 2px solid;
 }
 
 .RecipeContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
 }
 
 .recipe-details {
@@ -102,10 +154,10 @@ h1, h2, h3 {
 /*Create Recipe*/
 .create {
   width: calc(100% - 200px);
-  padding: 10vw;
   padding-left: 250px;
   display: flex;
   flex-direction: column;
+  padding-top: 50px;
 }
 
 .create label {
@@ -178,6 +230,13 @@ h1, h2, h3 {
 /*CookBook*/
 .CookBook {
     width: calc(100% - 200px);
-    padding: 10vw;
+    padding-top: 50px;
     padding-left: 250px;
+}
+
+/*Profile*/
+.profile {
+  width: calc(100% - 200px);
+  padding-top: 50px;
+  padding-left: 250px;
 }

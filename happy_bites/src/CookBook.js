@@ -15,13 +15,13 @@ const CookBook = () => {
     return ( 
         <div className = "CookBook">
             {!isPending && 
-            <div>
+                <div className = "recipeDisplay">
                 <h1>My CookBook</h1>
                 {isPending && <div>Loading...</div>}
                 {recipes && <RecipeContainer
                     recipes = {recipes} 
                 />}
-            </div>
+                </div>
             }
         </div>
      );

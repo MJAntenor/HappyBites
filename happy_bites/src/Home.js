@@ -54,13 +54,16 @@ const Home = () => {
             {!isPending && 
             <div>
                 <h1>Explore New Recipes</h1>
-                <div>
-                    <input type='checkbox' name="gluten-free" onChange={() => toggleFilter("gluten-free")} />
+                <div class="filters">
+                <span>Filters: </span>
+                    <div>
+                    <input id = "gluten-free" type='checkbox' class="hidden" name="gluten-free" onChange={() => toggleFilter("gluten-free")} />
                     <label for="gluten-free">gluten-free</label>
-                    <input type='checkbox' name="mexican" onChange={() => toggleFilter("mexican")} />
+                    <input id ="mexican" type='checkbox' class="hidden" name="mexican" onChange={() => toggleFilter("mexican")} />
                     <label for="mexican">mexican</label>
-                </div>
+                    </div>
                 <button onClick={reset}>Reset</button>
+                </div>
                 {isPending && <div>Loading...</div>}
                 {recipes && <RecipeContainer
                     recipes = {recipes} 

@@ -4,6 +4,7 @@ import Create from './Create';
 import Recipe from './Recipe';
 import CookBook from './CookBook'
 import Login from './Login';
+import Profile from './Profile';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
 
 
@@ -13,6 +14,9 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
+          <Route path="/profile">
+            <Profile />
+          </Route>
           <Route path="/create">
             <Create />
           </Route>

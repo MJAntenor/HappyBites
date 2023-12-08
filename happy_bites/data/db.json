@@ -52,12 +52,34 @@
     },
     {
       "title": "Yummy Food",
-      "time": "3 min.",
+      "time": "kkkkkk",
       "likes": 0,
       "comments": 0,
       "favorite": true,
-      "tags": {},
+      "tags": [
+        "gluten-free"
+      ],
       "id": 5
+    },
+    {
+      "title": "Yummy Food",
+      "time": "lkjh",
+      "likes": 0,
+      "comments": 0,
+      "favorite": true,
+      "tags": [
+        "gluten-free"
+      ],
+      "id": 6
+    },
+    {
+      "title": "Yummy Food",
+      "time": "lkjh",
+      "likes": 0,
+      "comments": 0,
+      "favorite": true,
+      "tags": [],
+      "id": 7
     }
   ]
 }
