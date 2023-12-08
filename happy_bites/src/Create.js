@@ -4,15 +4,17 @@ import {useHistory} from "react-router-dom";
 const Create = () => {
 const [title, setTitle] = useState('Yummy Food');
 const [time, setTime] = useState('');
+const [image, setImage] = useState('')
 const [likes, setLikes] = useState(0);
 const [comments, setComments] = useState(0);
 const [favorite, setFavorite] = useState(true);
-const [tags, setTags] = useState(["mexican"])
 const history = useHistory();
 const [isPending, setIsPending] = useState(false);
+const tags = new Set()
 
 const handleSubmit = (e) => {
     e.preventDefault()
+    tags = Array.from(tags);
     const recipe = {title, time, likes, comments, favorite, tags};
 
     console.log(recipe);
@@ -29,10 +31,24 @@ const handleSubmit = (e) => {
     })
 }
 
+const addTagsToRecipe = (tagsToAdd) => {
+    tagsToAdd.map(tag => {
+        tags.add(tag)
+    })
+}
+
     return (
         <div className="create">
             <h1>Add a New Recipe</h1>
             <form onSubmit={handleSubmit}>
+                <label>Recipe Image</label>
+                <input 
+                    type="file" 
+                    name="myImage" 
+                    accept="image/png, image/gif, image/jpeg" 
+                    value = {image}
+                    onChange={((e) => setImage(e.target.value))}
+                    />
                 <label>Recipe Title: </label>
                 <input
                     type ="text"
@@ -47,6 +63,15 @@ const handleSubmit = (e) => {
                     value={time}
                     onChange={((e) => setTime(e.target.value))}
                 ></input>
+                <label>Tags:</label>
+                <div>
+                    <ul>
+                        <li><input type='checkbox' name="gluten-free"  />
+                        <label for="gluten-free" onChange={() => addTagsToRecipe(["gluten-free"])}>gluten-free</label>
+                        <li></li><input type='checkbox' name="mexican" onChange={() => addTagsToRecipe(["mexican"])} />
+                        <label for="mexican">mexican</label></li>
+                    </ul>
+                </div>
                 { !isPending && <button>Add Recipe</button>}
                 {isPending && <button disabled>Adding Recipe...</button>}
             </form>
